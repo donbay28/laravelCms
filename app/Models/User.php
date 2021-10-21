@@ -19,8 +19,4 @@ class User extends Model
     protected $fillable = [
         'name', 'email','telp', 'alamat','password','active',
     ];
-
-    public function typeuser(){
-        return $this->role()->first();
-    }
 }
