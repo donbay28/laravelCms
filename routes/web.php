@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\WisataController;
+use App\Http\Controllers\CultureController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +43,12 @@ Route::post('/wisata/create',[WisataController::class, 'create']);
 Route::post('/wisata/update',[WisataController::class, 'update']);
 Route::post('/wisata/delete/{id}',[WisataController::class, 'delete']);
 //Master Wisata
+
+//Master Culture
+Route::get('/culture',[CultureController::class, 'index']);
+Route::get('/culture/create_culture',[CultureController::class, 'create_culture']);
+Route::get('/culture/update_culture/{id}',[CultureController::class, 'update_culture']);
+Route::post('/culture/create',[CultureController::class, 'create']);
+Route::post('/culture/update',[CultureController::class, 'update']);
+Route::post('/culture/delete/{id}',[CultureController::class, 'delete']);
+//Master Culture
