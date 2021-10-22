@@ -11,4 +11,8 @@ class Wisata extends Model
     protected $fillable = [
         'idkota','namaWisata', 'shortDescriptionWisata','descriptionWisata', 'imageSmallWisata','imageBigWisata','videoWisata',
     ];
+
+    // public function wisata(){
+    //     return $this->belongsTo('App\Models\Kota','idkotas', 'idkota');
+    // }
 }
