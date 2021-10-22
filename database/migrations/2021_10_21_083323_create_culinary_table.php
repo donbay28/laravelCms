@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCulinariesTable extends Migration
+class CreateCulinaryTable extends Migration
 {
     /**
      * Run the migrations.
