@@ -13,15 +13,15 @@ class CreateCulinariesTable extends Migration
      */
     public function up()
     {
-        Schema::create('culinaries', function (Blueprint $table) {
-            $table->increments('idculinaries');
+        Schema::create('culinary', function (Blueprint $table) {
+            $table->increments('idculinary');
             $table->integer('idkota')->unsigned()->index();
             $table->string("namaCulinary",100);
-            $table->string("shortDescriptionCulinaries",400);
-            $table->string("descriptionCulinaries",1024);
-            $table->string("imageSmallCulinaries",1024);
-            $table->string("imageBigCulinaries",1024);
-            $table->string("videoCulinaries",1024);
+            $table->string("shortDescriptionCulinary",400);
+            $table->string("descriptionCulinary",1024);
+            $table->string("imageSmallCulinary",1024);
+            $table->string("imageBigCulinary",1024);
+            $table->string("videoCulinary",1024);
             $table->timestamps();
 
             $table->foreign('idkota')->references('idkotas')->on('kotas')->onDelete('cascade');  
@@ -35,6 +35,6 @@ class CreateCulinariesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('culinaries');
+        Schema::dropIfExists('culinary');
     }
 }

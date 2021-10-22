@@ -81,7 +81,7 @@
                         </div>
                     </div>
                 <div class="flex items-baseline justify-center">
-                    <button class="px-4 py-2 mt-6 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Login</button>
+                    <button class="px-4 py-2 mt-6 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Submit</button>
                 </div>
             </div>
         </form>

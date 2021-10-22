@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Craft extends Model
 {
-    use HasFactory;
+    protected $primaryKey = 'idcrafts';
+    protected $fillable = [
+        'idkota','namaCraft', 'shortDescriptionCraft','descriptionCraft', 'imageSmallCraft','imageBigCraft','videoCraft',
+    ];
 }
