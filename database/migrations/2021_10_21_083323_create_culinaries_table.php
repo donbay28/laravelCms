@@ -19,14 +19,13 @@ class CreateCulinariesTable extends Migration
             $table->string("namaCulinary",100);
             $table->string("shortDescription",400);
             $table->string("description",1024);
-            $table->binary("imageSmall");
-            $table->binary("iamgeBig");
-            $table->binary("video");
             $table->timestamps();
-        });
-        Schema::table('culinaries', function($table) {
+
             $table->foreign('idkota')->references('idkotas')->on('kotas')->onDelete('cascade');  
         });
+        DB::statement("ALTER TABLE culinaries ADD imageSmall LONGBLOB");
+        DB::statement("ALTER TABLE culinaries ADD imageBig LONGBLOB");
+        DB::statement("ALTER TABLE culinaries ADD video LONGBLOB");
     }
 
     /**
