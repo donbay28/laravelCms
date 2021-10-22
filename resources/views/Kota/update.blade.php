@@ -38,7 +38,7 @@
                                 <label for="imageSmallUpload"></label>
                             </div>
                             <div class="avatar-preview">
-                                <div id="imageSmallPreview" style="background-image: url({{$kota['imageSmall']}});">
+                                <div id="imageSmallPreview" style="background-image: url('/assets/img/{{$kota['imageSmall']}}');">
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                                 <label for="imageBigUpload"></label>
                             </div>
                             <div class="avatar-preview">
-                                <div id="imageBigPreview" style="background-image: url({{$kota['imageBig']}});">
+                                <div id="imageBigPreview" style="background-image: url('/assets/img/{{$kota['imageBig']}}');">
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                             </div>
                             <div class="avatar-preview-video">
                                 <video controls id="videoPriview" class="object-fill h-72 w-full">
-                                    <source type="video/webm" src="{{$kota['video']}}">
+                                    <source type="video/webm" src="{{ url('assets/img/' . $kota['video']) }}">
                                 </video>
                             </div>
                         </div>

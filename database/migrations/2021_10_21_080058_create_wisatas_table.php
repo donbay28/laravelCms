@@ -19,13 +19,13 @@ class CreateWisatasTable extends Migration
             $table->string("namaWisata",100);
             $table->string("shortDescription",400);
             $table->string("description",1024);
+            $table->string("imageSmall",1024);
+            $table->string("imageBig",1024);
+            $table->string("video",1024);
             $table->timestamps();
 
             $table->foreign('idkota')->references('idkotas')->on('kotas')->onDelete('cascade');  
         });
-        DB::statement("ALTER TABLE wisatas ADD imageSmall LONGBLOB");
-        DB::statement("ALTER TABLE wisatas ADD imageBig LONGBLOB");
-        DB::statement("ALTER TABLE wisatas ADD video LONGBLOB");
     }
 
     /**

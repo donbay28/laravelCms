@@ -23,8 +23,8 @@
                                 <td>{{$row->namaKota}}</td>
                                 <td>{{$row->shortDescription}}</td>
                                 <td>{{$row->description}}</td>
-                                <td><img src="{{$row->imageSmall}}" style="width: 100px; height:100px;"></td>
-                                <td><img src="{{$row->imageBig}}" style="width: 100px; height:100px;"></td>
+                                <td><img src="{{ url('assets/img/' . $row->imageSmall) }}" style="width: 100px; height:100px;"></td>
+                                <td><img src="{{ url('assets/img/' . $row->imageBig) }}" style="width: 100px; height:100px;"></td>
                                 <td><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">See Video</button></td>
                                 <td class="px-6 py-4 text-center">
                                     <a href="{{url('kota/update_kota/'.$row->idkotas)}}">
