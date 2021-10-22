@@ -1,5 +1,5 @@
 @include('template/header')
-    <h1 class="text-3xl text-black pb-6">Master Kota</h1>
+    <h1 class="text-3xl text-black pb-6">Create Kota</h1>
     <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Button</button> -->
     <div class="px-8 py-6 mt-4 text-left bg-white shadow-lg">
         @if(strlen($errors) > 2)

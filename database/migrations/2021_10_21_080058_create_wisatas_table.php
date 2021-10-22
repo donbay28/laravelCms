@@ -17,11 +17,11 @@ class CreateWisatasTable extends Migration
             $table->increments('idwisatas');
             $table->integer('idkota')->unsigned()->index();
             $table->string("namaWisata",100);
-            $table->string("shortDescription",400);
-            $table->string("description",1024);
-            $table->string("imageSmall",1024);
-            $table->string("imageBig",1024);
-            $table->string("video",1024);
+            $table->string("shortDescriptionWisata",400);
+            $table->string("descriptionWisata",1024);
+            $table->string("imageSmallWisata",1024);
+            $table->string("imageBigWisata",1024);
+            $table->string("videoWisata",1024);
             $table->timestamps();
 
             $table->foreign('idkota')->references('idkotas')->on('kotas')->onDelete('cascade');  

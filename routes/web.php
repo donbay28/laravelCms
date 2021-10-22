@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KotaController;
+use App\Http\Controllers\WisataController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +33,12 @@ Route::post('/kota/create',[KotaController::class, 'create']);
 Route::post('/kota/update',[KotaController::class, 'update']);
 Route::post('/kota/delete/{id}',[KotaController::class, 'delete']);
 //Master Kota
+
+//Master Wisata
+Route::get('/wisata',[WisataController::class, 'index']);
+Route::get('/wisata/create_wisata',[WisataController::class, 'create_wisata']);
+Route::get('/wisata/update_wisata/{id}',[WisataController::class, 'update_wisata']);
+Route::post('/wisata/create',[WisataController::class, 'create']);
+Route::post('/wisata/update',[WisataController::class, 'update']);
+Route::post('/wisata/delete/{id}',[WisataController::class, 'delete']);
+//Master Wisata

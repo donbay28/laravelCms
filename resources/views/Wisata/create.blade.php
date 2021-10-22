@@ -1,5 +1,5 @@
 @include('template/header')
-    <h1 class="text-3xl text-black pb-6">Update Kota</h1>
+    <h1 class="text-3xl text-black pb-6">Create Wisata</h1>
     <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Button</button> -->
     <div class="px-8 py-6 mt-4 text-left bg-white shadow-lg">
         @if(strlen($errors) > 2)
@@ -9,36 +9,40 @@
                 </ul>
             </div>
         @endif
-        <h3 class="text-2xl font-bold text-center">Update Data Kota</h3>
-        <form id="loginform" action="{{ url('/kota/update')}}" method="post"  enctype="multipart/form-data">
+        <h3 class="text-2xl font-bold text-center">Input Data Wisata</h3>
+        <form id="loginform" action="{{ url('/wisata/create')}}" method="post"  enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mt-4">
-                <input type="hidden" name="idkotas" value="{{$kota['idkotas']}}">
-                <input type="hidden" name="old_imageSmall" value="{{$kota['imageSmall']}}">
-                <input type="hidden" name="old_imageBig" value="{{$kota['imageBig']}}">
-                <input type="hidden" name="old_video" value="{{$kota['video']}}">
                 <div>
-                    <label class="block" for="kota">Nama Kota<label>
-                    <input type="text" name="kota" placeholder="Kota" value="{{$kota['namaKota']}}" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                    <label class="block" for="wisata">Pilih Kota<label>
+                    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="idkota">
+                    @foreach($kota as $val)
+                    <option value="{{$val->idkotas}}">{{$val->namaKota}}</option>
+                    @endforeach
+                    </select>
+                </div>
+                <div>
+                    <label class="block" for="wisata">Nama Wisata<label>
+                    <input type="text" name="wisata" placeholder="Wisata" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                 </div>
                 <div>
                     <label class="block">Short Description<label>
-                    <textarea type="text" name="shortDescription" placeholder="Short Description" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">{{$kota['shortDescription']}}</textarea>
+                    <textarea type="text" name="shortDescriptionWisata" placeholder="Short Description" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"></textarea>
                 </div>
                 <div>
                     <label class="block">Description<label>
-                    <textarea type="text" name="description" placeholder="Description" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">{{$kota['description']}}</textarea>
+                    <textarea type="text" name="descriptionWisata" placeholder="Description" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"></textarea>
                 </div>
                 <div class="grid gap-x-8 gap-y-4 grid-cols-2">
                     <div>
                         <label class="block">Image Small<label>
                         <div class="avatar-upload">
                             <div class="avatar-edit">
-                                <input type="file" id="imageSmallUpload" name="imageSmall">
+                                <input type="file" id="imageSmallUpload" name="imageSmallWisata">
                                 <label for="imageSmallUpload"></label>
                             </div>
                             <div class="avatar-preview">
-                                <div id="imageSmallPreview" style="background-image: url('/assets/img/{{$kota['imageSmall']}}');">
+                                <div id="imageSmallPreview" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfEwRoLRsPlNT_JYV40j8c9eOPWV6YdJ4UztWm_m4b9dkm7VQt);">
                                 </div>
                             </div>
                         </div>
@@ -48,11 +52,11 @@
                         <label class="block">Image Big<label>
                         <div class="avatar-upload">
                             <div class="avatar-edit">
-                                <input type="file" id="imageBigUpload" name="imageBig">
+                                <input type="file" id="imageBigUpload" name="imageBigWisata">
                                 <label for="imageBigUpload"></label>
                             </div>
                             <div class="avatar-preview">
-                                <div id="imageBigPreview" style="background-image: url('/assets/img/{{$kota['imageBig']}}');">
+                                <div id="imageBigPreview" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfEwRoLRsPlNT_JYV40j8c9eOPWV6YdJ4UztWm_m4b9dkm7VQt);">
                                 </div>
                             </div>
                         </div>
@@ -60,25 +64,25 @@
                 </div>
                 <div>
                     <label class="block">Video<label>
-                        <div class="avatar-upload">
-                            <div class="avatar-edit">
-                                <input type="file" id="videoUpload" name="video">
-                                <label for="videoUpload"></label>
-                            </div>
-                            <div class="avatar-preview-video">
-                                <video controls id="videoPriview" class="object-fill h-72 w-full">
-                                    <source type="video/webm" src="{{ url('assets/img/' . $kota['video']) }}">
-                                </video>
-                            </div>
+                    <div class="avatar-upload">
+                        <div class="avatar-edit">
+                            <input type="file" id="videoUpload" name="videoWisata">
+                            <label for="videoUpload"></label>
+                        </div>
+                        <div class="avatar-preview-video">
+                            <video controls id="videoPriview" class="object-fill h-72 w-full">
+                                <source type="video/webm">
+                            </video>
                         </div>
                     </div>
+                </div>
                 <div class="flex items-baseline justify-center">
-                    <button class="px-4 py-2 mt-6 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Login</button>
+                    <button class="px-4 py-2 mt-6 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Submit</button>
                 </div>
             </div>
         </form>
     </div>
-
+            
     <script>
         function readURLImageBig(input) {
             if (input.files && input.files[0]) {

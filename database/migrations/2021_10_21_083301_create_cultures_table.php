@@ -17,11 +17,11 @@ class CreateCulturesTable extends Migration
             $table->increments('idcultures');
             $table->integer('idkota')->unsigned()->index();
             $table->string("namaCulture",100);
-            $table->string("shortDescription",400);
-            $table->string("description",1024);
-            $table->string("imageSmall",1024);
-            $table->string("imageBig",1024);
-            $table->string("video",1024);
+            $table->string("shortDescriptionCulture",400);
+            $table->string("descriptionCulture",1024);
+            $table->string("imageSmallCulture",1024);
+            $table->string("imageBigCulture",1024);
+            $table->string("videoCulture",1024);
             $table->timestamps();
 
             $table->foreign('idkota')->references('idkotas')->on('kotas')->onDelete('cascade');  

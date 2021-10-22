@@ -17,11 +17,11 @@ class CreateCraftsTable extends Migration
             $table->increments('idcrafts');
             $table->integer('idkota')->unsigned()->index();
             $table->string("namaCraft",100);
-            $table->string("shortDescription",400);
-            $table->string("description",1024);
-            $table->string("imageSmall",1024);
-            $table->string("imageBig",1024);
-            $table->string("video",1024);
+            $table->string("shortDescriptionCraft",400);
+            $table->string("descriptionCraft",1024);
+            $table->string("imageSmallCraft",1024);
+            $table->string("imageBigCraft",1024);
+            $table->string("videoCraft",1024);
             $table->timestamps();
 
             $table->foreign('idkota')->references('idkotas')->on('kotas')->onDelete('cascade');  

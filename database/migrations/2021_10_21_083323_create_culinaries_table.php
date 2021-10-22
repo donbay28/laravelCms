@@ -17,11 +17,11 @@ class CreateCulinariesTable extends Migration
             $table->increments('idculinaries');
             $table->integer('idkota')->unsigned()->index();
             $table->string("namaCulinary",100);
-            $table->string("shortDescription",400);
-            $table->string("description",1024);
-            $table->string("imageSmall",1024);
-            $table->string("imageBig",1024);
-            $table->string("video",1024);
+            $table->string("shortDescriptionCulinaries",400);
+            $table->string("descriptionCulinaries",1024);
+            $table->string("imageSmallCulinaries",1024);
+            $table->string("imageBigCulinaries",1024);
+            $table->string("videoCulinaries",1024);
             $table->timestamps();
 
             $table->foreign('idkota')->references('idkotas')->on('kotas')->onDelete('cascade');  
